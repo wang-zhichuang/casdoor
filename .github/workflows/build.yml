@@ -177,4 +177,4 @@ jobs:
           target: STANDARD
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: wang-zhichuang/casdoor:${{steps.get-current-tag.outputs.tag }},wang-zhichuang/casdoor:latest
+          tags: zhichuang/casdoor:${{steps.get-current-tag.outputs.tag }},zhichuang/casdoor:latest
