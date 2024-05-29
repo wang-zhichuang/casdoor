@@ -391,12 +391,12 @@ class App extends Component {
                     </Switch>
                 }
               </Content>
-              {
+              {/* {
                 this.renderFooter()
               }
               {
                 this.renderAiAssistant()
-              }
+              } */}
             </Layout>
           </StyleProvider>
         </ConfigProvider>
@@ -445,12 +445,12 @@ class App extends Component {
                   });
                 }}
               />
-              {
+              {/* {
                 this.renderFooter()
               }
               {
                 this.renderAiAssistant()
-              }
+              } */}
             </Layout>
           </Suspense>
         }
