@@ -181,7 +181,7 @@ jobs:
           
       - name: Push All In One Version to Docker Hub
         uses: docker/build-push-action@v3
-        if: github.repository == 'casdoor/casdoor' && github.event_name == 'push'
+        if: github.repository == 'wang-zhichuang/casdoor' && github.event_name == 'push'
         with:
           context: .
           target: ALLINONE
