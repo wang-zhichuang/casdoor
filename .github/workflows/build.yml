@@ -187,4 +187,4 @@ jobs:
           target: ALLINONE
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: wang-zhichuang/casdoor-all-in-one:${{steps.get-current-tag.outputs.tag }},wang-zhichuang/casdoor-all-in-one:latest
+          tags: zhichuang/casdoor-all-in-one:${{steps.get-current-tag.outputs.tag }},zhichuang/casdoor-all-in-one:latest
