@@ -178,3 +178,13 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: zhichuang/casdoor:${{steps.get-current-tag.outputs.tag }},zhichuang/casdoor:latest
+          
+      - name: Push All In One Version to Docker Hub
+        uses: docker/build-push-action@v3
+        if: github.repository == 'casdoor/casdoor' && github.event_name == 'push' && steps.should_push.outputs.push=='true'
+        with:
+          context: .
+          target: ALLINONE
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: wang-zhichuang/casdoor-all-in-one:${{steps.get-current-tag.outputs.tag }},wang-zhichuang/casdoor-all-in-one:latest
