@@ -243,15 +243,15 @@ function ManagementPage(props) {
       },
     }) : null;
 
-    res.push(Setting.getItem(<Link style={{color: textColor}} to="/">{i18next.t("general:Home")}</Link>, "/home", <HomeTwoTone twoToneColor={twoToneColor} />, [
-      Setting.getItem(<Link to="/">{i18next.t("general:Dashboard")}</Link>, "/"),
-      Setting.getItem(<Link to="/shortcuts">{i18next.t("general:Shortcuts")}</Link>, "/shortcuts"),
-      Setting.getItem(<Link to="/apps">{i18next.t("general:Apps")}</Link>, "/apps"),
-    ].filter(item => {
-      return Setting.isLocalAdminUser(props.account);
-    })));
-
     if (Setting.isLocalAdminUser(props.account)) {
+      res.push(Setting.getItem(<Link style={{color: textColor}} to="/">{i18next.t("general:Home")}</Link>, "/home", <HomeTwoTone twoToneColor={twoToneColor} />, [
+        Setting.getItem(<Link to="/">{i18next.t("general:Dashboard")}</Link>, "/"),
+        Setting.getItem(<Link to="/shortcuts">{i18next.t("general:Shortcuts")}</Link>, "/shortcuts"),
+        Setting.getItem(<Link to="/apps">{i18next.t("general:Apps")}</Link>, "/apps"),
+      ].filter(item => {
+        return Setting.isLocalAdminUser(props.account);
+      })));
+
       if (Conf.ShowGithubCorner) {
         res.push(Setting.getItem(<a href={"https://casdoor.com"}>
           <span style={{fontWeight: "bold", backgroundColor: "rgba(87,52,211,0.4)", marginTop: "12px", paddingLeft: "5px", paddingRight: "5px", display: "flex", alignItems: "center", height: "40px", borderRadius: "5px"}}>
@@ -316,6 +316,14 @@ function ManagementPage(props) {
           Setting.getItem(<Link to="/syncers">{i18next.t("general:Syncers")}</Link>, "/syncers"),
           Setting.getItem(<Link to="/webhooks">{i18next.t("general:Webhooks")}</Link>, "/webhooks")]));
       }
+    } else {
+      res.push(Setting.getItem(<Link style={{color: textColor}} to="https://dev.risc-verse.cn/index">{i18next.t("general:Home")}</Link>, "/home", <HomeTwoTone twoToneColor={twoToneColor} />, [
+        Setting.getItem(<Link to="/">{i18next.t("general:Dashboard")}</Link>, "/"),
+        Setting.getItem(<Link to="/shortcuts">{i18next.t("general:Shortcuts")}</Link>, "/shortcuts"),
+        Setting.getItem(<Link to="/apps">{i18next.t("general:Apps")}</Link>, "/apps"),
+      ].filter(item => {
+        return Setting.isLocalAdminUser(props.account);
+      })));
     }
 
     return res;
